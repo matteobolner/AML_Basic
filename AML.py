@@ -187,7 +187,7 @@ print('Start param searching at {}'.format(str(start_time)))
 # In[63]:
 
 
-grid_clf.fit(data["train"]["X"][:1000], data["train"]["Y"][:1000])
+grid_clf.fit(data["train"]["X"][:samplesize], data["train"]["Y"][:samplesize])
 
 # In[34]:
 
