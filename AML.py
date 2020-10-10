@@ -152,11 +152,11 @@ samplesize = len(data["train"]["X"])
 
 # In[28]:
 
-
-gamma_range = [0.0001, 0.01, 1.0, 10]
-C_range = [0.1, 1, 10, 50, 100]
-parameters = {'kernel':['poly'], 'C':C_range, 'gamma': gamma_range, 'degree' : [4,5]}
-
+gamma_range = [0.0001, 0.01, 1.0, 5]
+C_range = [0.001, 0.1, 10, 50, 100]
+kernels = ['rbf','poly']
+degrees = [4,5]
+parameters = {'kernel': kernels, 'C':C_range, 'gamma': gamma_range, 'degree': degrees}
 
 # In[29]:
 
@@ -174,7 +174,7 @@ parameters = {'kernel':['poly'], 'C':C_range, 'gamma': gamma_range, 'degree' : [
 
 
 svm_clf = svm.SVC()
-grid_clf = GridSearchCV(estimator=svm_clf,param_grid=parameters, cv = 3, n_jobs=7, verbose=10)
+grid_clf = GridSearchCV(estimator=svm_clf,param_grid=parameters, cv = 5, n_jobs=8, verbose=10)
 
 
 # In[62]:
@@ -194,7 +194,7 @@ grid_clf.fit(data["train"]["X"][:samplesize], data["train"]["Y"][:samplesize])
 
 elapsed_time= dt.datetime.now() - start_time
 print('Elapsed time, param searching {}'.format(str(elapsed_time)))
-joblib.dump(grid_clf, 'grid_clf_poly.pkl')
+joblib.dump(grid_clf, 'grid_clf_complete.pkl')
 
 # Best parameters:
 # 10000 samples: {'C': 100, 'gamma': 0.01, 'kernel': 'rbf'}
@@ -257,7 +257,7 @@ params_df = pd.concat([pd.DataFrame(grid_clf.cv_results_["params"]),pd.DataFrame
 # In[43]:
 
 
-params_df.to_csv('params_df_poly.csv')
+params_df.to_csv('params_df_complete.csv')
 
 # In[44]:
 
