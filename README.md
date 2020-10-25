@@ -19,7 +19,8 @@ The implementation of the kernel function allows the implicit mapping of the dat
 According to most literature available and the official MNIST website, handwriting classification models based on Support Vector Machines (SVM) benefit from deskewing, that is the straightening of the numbers in the images.  
 Therefore, all the images in the dataset were processed with deskewing, using the method available at https://fsix.github.io/mnist/Deskewing.html.
 
-## 
+## Model training and parameter evaluation
+Since this project uses a google colab notebook, time-consuming tasks such as the grid search for the model parameters were performed on a local machine.
 
 
 ## References
