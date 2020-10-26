@@ -6,6 +6,12 @@ The goal of this project was to produce a handwriting classifier based on Suppor
 The model obtained uses a gaussian kernel function, and is able to correctly classify images in the testing set with an error rate of **1.4857** , which is on par with the value reported on the above website.  
 The polynomial kernel seems to underperform slightly, with an error rate of **1.5714**, which is higher than the reported rate.
 
+## REPO STRUCTURE
+- AML.ipynb : google colab notebook implementing and describing the project
+- AML.py : python script obtained from the notebook
+- grid_clf.pkl; grid_clf_poly.pkl : pickled grid search results
+
+
 ## MNIST
 " The MNIST database of handwritten digits, [...] has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST. The digits have been size-normalized and centered in a fixed-size image. " [[1]](#1).  
 The database was imported with the fetch_openml function of scikit-learn.  
@@ -20,7 +26,8 @@ According to most literature available and the official MNIST website, handwriti
 Therefore, all the images in the dataset were processed with deskewing, using the method available at https://fsix.github.io/mnist/Deskewing.html.
 
 ## Model training and parameter evaluation
-Since this project uses a google colab notebook, time-consuming tasks such as the grid search for the model parameters were performed on a local machine.
+Since this project uses a google colab notebook, time-consuming tasks such as the grid search for the model parameters were performed on a local machine.  
+The grid search was performed along with 3-fold cross validation.
 
 
 ## References
