@@ -10,7 +10,7 @@ The polynomial kernel seems to underperform slightly, with an error rate of **1.
 - AML.ipynb : google colab notebook implementing and describing the project
 - AML.py : python script obtained from the notebook
 - grid_clf.pkl; grid_clf_poly.pkl : pickled grid search results
-
+- output.txt, params_df.csv : additional grid search information
 
 ## MNIST
 " The MNIST database of handwritten digits, [...] has a training set of 60,000 examples, and a test set of 10,000 examples. It is a subset of a larger set available from NIST. The digits have been size-normalized and centered in a fixed-size image. " [[1]](#1).  
